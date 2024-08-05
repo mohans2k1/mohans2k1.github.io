@@ -12,20 +12,23 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://msundaram.dev/",
-  integrations: [sitemap(), robotsTxt({
-    sitemap: ["https://gianmarco.xyz/sitemap-index.xml", "https://gianmarco.xyz/sitemap-0.xml"]
-  }), solidJs(), UnoCSS({
-    injectReset: true
-  }), icon(), svelte()],
+  site: "https://mohans2k1.github.io",
+  integrations: [
+    solidJs(),
+    UnoCSS({
+      injectReset: true,
+    }),
+    icon(),
+    svelte(),
+  ],
   markdown: {
-    remarkPlugins: [remarkReadingTime]
+    remarkPlugins: [remarkReadingTime],
   },
-  output: "server",
+  output: "static",
   vite: {
-    assetsInclude: "**/*.riv"
+    assetsInclude: "**/*.riv",
   },
   adapter: node({
-    mode: "standalone"
-  })
+    mode: "standalone",
+  }),
 });
